@@ -22,6 +22,8 @@ const connect = () => {
     });
 };
 
+const PORT = process.env.PORT || 8800;
+
 //middlewares
 app.use(cors());
 app.use(cookieParser());
@@ -43,7 +45,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(process.env.PORT || 8800, () => {
+app.listen(PORT, () => {
   connect();
   console.log("Connected to Server");
 });
